@@ -9,7 +9,7 @@ export const HDivider = (props: any) => {
   return (
     <View
       style={{ ...styles.hSeparator, ...props.style }}
-      darkColor={Color.Gray10}
+      darkColor={Color.Gray5}
     />
   )
 }
@@ -17,7 +17,7 @@ export const VDivider = (props: any) => {
   return (
     <View
       style={{ ...styles.vSeparator, ...props.style }}
-      darkColor={Color.Gray10}
+      darkColor={Color.Gray5}
     />
   )
 }

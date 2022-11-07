@@ -27,7 +27,7 @@ import {
 } from 'react-native-iconly'
 
 import { IconButtonUnstyled } from '../components/atoms/IconButton'
-import Header from '../components/molecules/Header'
+// import Header from '../components/molecules/Header'
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>()
 
@@ -42,7 +42,7 @@ export default function BottomTabNavigator() {
           backgroundColor: '#000',
           height: 85,
           borderTopWidth: 0.5,
-          borderTopColor: Colors.Gray10,
+          borderTopColor: Colors.Gray5,
           alignItems: 'center',
           paddingVertical: 8
         },
@@ -66,7 +66,8 @@ export default function BottomTabNavigator() {
         component={ChatScreen}
         options={{
           title: 'Chat',
-          header: () => <Header title="Chats" />,
+          // header: () => <Header title="Chats" />,
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Chat set="curved" size={24} color={color} />
           )
@@ -94,7 +95,7 @@ export default function BottomTabNavigator() {
         name="Swipe"
         component={SwipeScreen}
         options={{
-          title: 'Spaces',
+          title: 'Swipe',
           tabBarIcon: ({ color }) => (
             <Voice
               color={color}
@@ -110,6 +111,7 @@ export default function BottomTabNavigator() {
         component={ProfileScreen}
         options={{
           title: 'Profile',
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <ProfileIcon name="profile" color={color} />
           )
@@ -123,18 +125,18 @@ function TabBarIcon(props: { name: string; color: string }) {
   return <Home set="curved" {...props} />
 }
 
-const TabOneStack = createStackNavigator<HomeNavigatorParamList>()
+const HomeStack = createStackNavigator<HomeNavigatorParamList>()
 
 function HomeNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
+    <HomeStack.Navigator>
+      <HomeStack.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{
           title: 'Home',
           headerRightContainerStyle: {
-            paddingRight: 8
+            paddingRight: 12
           },
           headerLeftContainerStyle: {
             paddingLeft: 0
@@ -157,7 +159,7 @@ function HomeNavigator() {
           )
         }}
       />
-    </TabOneStack.Navigator>
+    </HomeStack.Navigator>
   )
 }
 

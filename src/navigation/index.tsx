@@ -12,6 +12,7 @@ import NewPostScreen from '../screens/post/NewPostScreen'
 import NotFoundScreen from '../screens/NotFoundScreen'
 import BottomTabNavigator from './BottomTabNavigator'
 import LinkingConfiguration from './LinkingConfiguration'
+import UserProfileScreen from '../screens/profile/UserProfileScreen'
 
 export default function Navigation({
   colorScheme
@@ -40,7 +41,7 @@ function RootNavigator() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} />
       <Stack.Screen name="NewPost" component={NewPostScreen} />
-      {/* <Stack.Screen name="Fleet" component={Index} /> */}
+      <Stack.Screen name="UserProfile" component={UserProfileScreen} />
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}

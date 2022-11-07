@@ -3,6 +3,8 @@ import { Dimensions, Image, StyleSheet, View } from 'react-native'
 import { Location } from 'react-native-iconly'
 import { AvatarXl, AvatarXs } from '../../components/atoms/Avatar'
 import { PrimaryBtn } from '../../components/atoms/Button'
+import { useNavigation } from '@react-navigation/native'
+
 import {
   HeadingSm,
   TextLg,
@@ -14,6 +16,12 @@ import { DotSeparator } from '../atoms/Dividers'
 import { MediumText } from '../atoms/StyledText'
 
 const ProfileCard = (props: any) => {
+  const navigation = useNavigation()
+
+  const onPress = () => {
+    navigation.navigate('UserProfile')
+  }
+
   return (
     <View style={styles.container}>
       <View>
@@ -26,7 +34,7 @@ const ProfileCard = (props: any) => {
 
       <View style={styles.groupColumn}>
         <View style={styles.headerRow}>
-          <AvatarXl />
+          <AvatarXl onPress={onPress} />
           <PrimaryBtn>
             <TextLg style={{ color: 'white', opacity: 0.87 }}>
               Add Friend

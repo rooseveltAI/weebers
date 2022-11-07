@@ -7,7 +7,7 @@ import { BoldText, MediumText, RegularText, SemiboldText } from './StyledText'
 
 export const AvatarXl = (props: any) => {
   return (
-    <Pressable activeOpacity={0.5} onPress={() => props.pressHandler}>
+    <Pressable activeOpacity={0.5} onPress={props.onPress}>
       <Image
         source={props.source}
         style={{ ...styles.avatar80, ...props.style }}
@@ -18,7 +18,7 @@ export const AvatarXl = (props: any) => {
 
 export const AvatarLg = (props: any) => {
   return (
-    <Pressable activeOpacity={0.5} onPress={() => props.pressHandler}>
+    <Pressable activeOpacity={0.5} onPress={props.onPress}>
       <Image
         source={props.source}
         style={{ ...styles.avatar48, ...props.style }}
@@ -29,7 +29,7 @@ export const AvatarLg = (props: any) => {
 
 export const AvatarMd = (props: any) => {
   return (
-    <Pressable activeOpacity={0.5} onPress={() => props.pressHandler}>
+    <Pressable activeOpacity={0.5} onPress={props.onPress}>
       <Image
         source={props.source}
         style={{ ...styles.avatar40, ...props.style }}
@@ -40,7 +40,7 @@ export const AvatarMd = (props: any) => {
 
 export const AvatarSm = (props: any) => {
   return (
-    <Pressable activeOpacity={0.5} onPress={() => props.pressHandler}>
+    <Pressable activeOpacity={0.5} onPress={props.onPress}>
       <Image
         source={props.source}
         style={{ ...styles.avatar30, ...props.style }}
@@ -51,7 +51,7 @@ export const AvatarSm = (props: any) => {
 
 export const AvatarXs = (props: any) => {
   return (
-    <Pressable activeOpacity={0.5} onPress={() => props.onPress}>
+    <Pressable activeOpacity={0.5} onPress={props.onPress}>
       <Image
         source={props.source}
         style={{ ...styles.avatar25, ...props.style }}

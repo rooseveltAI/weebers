@@ -14,13 +14,13 @@ export const VerticalScroll = ({ children }: any) => {
   )
 }
 
-export const HorizontalScroll = ({ children }: any) => {
+export const HorizontalScroll = ({ style, children }: any) => {
   const navigation = useNavigation()
   return (
     <ScrollView
       horizontal={true}
       showsHorizontalScrollIndicator={false}
-      style={styles.container}
+      style={{ ...styles.container, ...style }}
     >
       {children}
     </ScrollView>

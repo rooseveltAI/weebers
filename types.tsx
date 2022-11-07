@@ -21,6 +21,7 @@ export type RootStackParamList = {
   Modal: undefined
   NotFound: undefined
   NewPost: undefined
+  UserProfile: undefined
 }
 
 export type BottomTabParamList = {
@@ -33,6 +34,10 @@ export type BottomTabParamList = {
 
 export type HomeNavigatorParamList = {
   HomeScreen: undefined
+}
+
+export type ProfileNavigatorParamList = {
+  ProfileScreen: undefined
 }
 
 export type TabTwoParamList = {

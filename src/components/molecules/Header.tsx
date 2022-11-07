@@ -3,7 +3,23 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Colors from '../../constants/Colors'
 
-const Header = (props: any) => {
+export const HeaderStack = (props: any) => {
+  const navigation = useNavigation()
+
+  return (
+    <View style={styles.stackContainer}>
+      <View>{props.leftComponent}</View>
+      {/*  */}
+      {/* <View>
+        {props.centerComponent}
+      </View> */}
+      {/*  */}
+      <View>{props.rightComponent}</View>
+    </View>
+  )
+}
+
+export const HeaderSecondary = (props: any) => {
   const navigation = useNavigation()
 
   return (
@@ -22,17 +38,26 @@ const Header = (props: any) => {
     </View>
   )
 }
-export default Header
 
 const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    position: 'relative',
-    paddingVertical: 15,
+    justifyContent: 'space-between',
+    paddingVertical: 24,
     paddingHorizontal: 24,
     borderWidth: 0.5,
     borderBottomColor: Colors.Gray10
+  },
+  stackContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 12,
+    paddingHorizontal: 15,
+    borderWidth: 0.5,
+    borderBottomColor: Colors.Gray5
   }
 })

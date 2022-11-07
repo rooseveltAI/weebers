@@ -1,4 +1,4 @@
-import { IconAdd, IconMore, IconPlus, ProfileIcon } from '../../assets/icons'
+import { IconMore, ProfileIcon } from '../../assets/icons'
 import { HDivider } from '../../components/atoms/Dividers'
 import PostCard from '../../components/organisms/PostCard'
 import ProfileCard from '../../components/organisms/ProfileCard'
@@ -46,7 +46,7 @@ export default function ChatScreen() {
                 >
                   <ProfileIcon style={{ width: 50, height: 50 }} />
                   <Pressable style={styles.addIcon}>
-                    <IconPlus />
+                    {/* <IconPlus /> */}
                   </Pressable>
                 </Pressable>
                 <RegularText

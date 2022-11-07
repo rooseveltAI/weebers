@@ -35,7 +35,7 @@ import {
   IconButtonOutline,
   IconButtonUnstyled
 } from '../../components/atoms/IconButton'
-import Header from '../../components/molecules/Header'
+import { HeaderSecondary } from '../../components/molecules/Header'
 import { HDivider } from '../../components/atoms/Dividers'
 import { AvatarMd } from '../../components/atoms/Avatar'
 
@@ -119,7 +119,7 @@ export default function CreatePostScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header
+      <HeaderSecondary
         leftComponent={
           <IconButtonUnstyled onPress={() => navigation.goBack()}>
             <ChevronLeft size={28} primaryColor={Colors.Color15} />
