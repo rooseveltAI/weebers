@@ -1,4 +1,4 @@
-import { Text, TextProps } from './Themed'
+import { Text, TextProps } from '../Themed'
 
 export function RegularText(props: TextProps) {
   return (

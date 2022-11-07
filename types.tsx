@@ -20,6 +20,23 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined
   Modal: undefined
   NotFound: undefined
+  NewPost: undefined
+}
+
+export type BottomTabParamList = {
+  Home: undefined
+  Chat: undefined
+  Ar: undefined
+  Swipe: undefined
+  Profile: undefined
+}
+
+export type HomeNavigatorParamList = {
+  HomeScreen: undefined
+}
+
+export type TabTwoParamList = {
+  TabTwoScreen: undefined
 }
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

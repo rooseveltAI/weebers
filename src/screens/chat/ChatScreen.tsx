@@ -1,12 +1,12 @@
-import { IconAdd, IconMore, IconPlus, UserIcon } from '../../assets/icons'
-import Divider from '../../components/atoms/divider'
+import { IconAdd, IconMore, IconPlus, ProfileIcon } from '../../assets/icons'
+import { HDivider } from '../../components/atoms/Dividers'
 import PostCard from '../../components/organisms/PostCard'
 import ProfileCard from '../../components/organisms/ProfileCard'
 import {
   BoldText,
   RegularText,
   SemiboldText
-} from '../../components/StyledText'
+} from '../../components/atoms/StyledText'
 import React from 'react'
 import {
   Button,
@@ -23,7 +23,7 @@ import ChatCard from '../../components/organisms/ChatCard'
 export default function ChatScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Divider style={{ marginBottom: 0, marginTop: 5 }} />
+      <HDivider style={{ marginBottom: 0, marginTop: 5 }} />
       <ScrollView showsVerticalScrollIndicator={false} style={{ flex: 1 }}>
         <View style={styles.statusContainer}>
           <ScrollView
@@ -44,7 +44,7 @@ export default function ChatScreen() {
                     justifyContent: 'center'
                   }}
                 >
-                  <UserIcon style={{ width: 50, height: 50 }} />
+                  <ProfileIcon style={{ width: 50, height: 50 }} />
                   <Pressable style={styles.addIcon}>
                     <IconPlus />
                   </Pressable>
@@ -58,14 +58,14 @@ export default function ChatScreen() {
             </Pressable>
           </ScrollView>
         </View>
-        <Divider />
+        <HDivider />
 
         <ChatCard />
         <ChatCard />
         <ChatCard />
         <ChatCard />
 
-        {/* <Divider /> */}
+        {/* <HDivider /> */}
       </ScrollView>
     </SafeAreaView>
   )

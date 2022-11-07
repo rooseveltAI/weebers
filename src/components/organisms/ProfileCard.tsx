@@ -1,74 +1,89 @@
-import {
-  UserIcon,
-  IconGroupSm,
-  IconCommentSm,
-  IconShare,
-  IconHeart,
-  IconSend,
-  IconLocation
-} from '../../assets/icons'
-import Divider from '../atoms/divider'
-import { MediumText, RegularText, SemiboldText, BoldText } from '../StyledText'
 import React from 'react'
-import { Text, StyleSheet, Pressable, TextInput, View } from 'react-native'
-import Button from '../atoms/button'
+import { Dimensions, Image, StyleSheet, View } from 'react-native'
+import { Location } from 'react-native-iconly'
+import { AvatarXl, AvatarXs } from '../../components/atoms/Avatar'
+import { PrimaryBtn } from '../../components/atoms/Button'
+import {
+  HeadingSm,
+  TextLg,
+  TextSm,
+  TextXs
+} from '../../components/atoms/Typography'
+import Colors from '../../constants/Colors'
+import { DotSeparator } from '../atoms/Dividers'
+import { MediumText } from '../atoms/StyledText'
 
 const ProfileCard = (props: any) => {
   return (
-    <View style={styles.profileCard}>
-      <UserIcon style={{ width: 80, height: 80 }} />
-      <View style={styles.sectionOne}>
-        <BoldText style={{ fontSize: 16 }}>Marshall Chad</BoldText>
-        <RegularText
-          style={{ fontSize: 12, opacity: 0.68, paddingVertical: 5 }}
-        >
-          (He/They)
-        </RegularText>
-        <View style={{ flexDirection: 'row', opacity: 0.68 }}>
-          <RegularText style={{ fontSize: 12 }}>23 yrs old</RegularText>
-          <RegularText style={{ fontSize: 12, paddingHorizontal: 5 }}>
-            ·
-          </RegularText>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <IconLocation />
-            <RegularText style={{ paddingHorizontal: 2 }}>
-              Carlifornia
-            </RegularText>
-          </View>
+    <View style={styles.container}>
+      <View>
+        {/* Header Image */}
+        <Image
+          source={require('../../assets/images/Image.png')}
+          style={{ ...styles.image, ...props.style }}
+        />
+      </View>
+
+      <View style={styles.groupColumn}>
+        <View style={styles.headerRow}>
+          <AvatarXl />
+          <PrimaryBtn>
+            <TextLg style={{ color: 'white', opacity: 0.87 }}>
+              Add Friend
+            </TextLg>
+          </PrimaryBtn>
         </View>
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingVertical: 5
-        }}
-      >
-        <UserIcon />
-        <RegularText
-          style={{ fontSize: 12, paddingHorizontal: 5, opacity: 0.68 }}
-        >
-          1 mutual friends
-        </RegularText>
-      </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          paddingTop: 10
-        }}
-      >
-        <Button style={{ paddingHorizontal: 10 }}>
-          <SemiboldText
-            style={{
-              fontSize: 12,
-              textTransform: 'uppercase',
-              letterSpacing: 0.5
-            }}
+        <View style={styles.groupContent}>
+          <View style={styles.alignRow}>
+            <HeadingSm>{props.username}</HeadingSm>
+            <TextXs style={styles.padding4}>{props.pronounce}</TextXs>
+          </View>
+          <MediumText style={{ fontSize: 12, color: Colors.Color5 }}>
+            {props.userhandle}
+          </MediumText>
+
+          <View style={{ paddingVertical: 4 }}>
+            <TextSm style={{ color: Colors.Color10, fontSize: 15 }}>
+              {props.bio}
+            </TextSm>
+          </View>
+
+          <View style={styles.alignRow}>
+            <TextXs style={{ fontSize: 13 }}>{props.age}</TextXs>
+            <DotSeparator />
+            <View style={styles.alignRow}>
+              <Location set="light" size={12} color={Colors.Color5} />
+              <TextXs style={{ fontSize: 13 }}>{props.location}</TextXs>
+            </View>
+          </View>
+
+          {/* <PrimaryBtnUnstyled
+            style={{ alignItems: 'flex-start', paddingVertical: 8 }}
           >
-            Add friend
-          </SemiboldText>
-        </Button>
+            <TextSm>
+              <BoldText style={{ color: Colors.Color10 }}>
+                {props.postcount}
+              </BoldText>{' '}
+              Posts
+            </TextSm>
+          </PrimaryBtnUnstyled> */}
+        </View>
+
+        <View style={styles.groupMutual}>
+          <View style={styles.alignRow}>
+            <AvatarXs
+              style={{ borderWidth: 1, borderColor: Colors.secondaryBlack }}
+            />
+            <AvatarXs
+              style={{
+                marginLeft: -8,
+                borderWidth: 1,
+                borderColor: Colors.secondaryBlack
+              }}
+            />
+          </View>
+          <TextSm style={styles.padding4}>2 mutual friends</TextSm>
+        </View>
       </View>
     </View>
   )
@@ -76,27 +91,49 @@ const ProfileCard = (props: any) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center'
-  },
-  sectionOne: {
-    paddingVertical: 10
-  },
-  profileCard: {
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 0.10)',
+    padding: 8,
+    borderWidth: 0.5,
+    borderColor: Colors.Gray10,
     borderRadius: 25,
-    marginRight: 15
+    marginRight: 15,
+    maxWidth: 285
   },
-  alignH: {
-    flex: 1,
+  groupColumn: {
+    marginTop: -40,
+    paddingHorizontal: 8,
+    flex: 1
+  },
+  headerRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingBottom: 4
+  },
+  groupContent: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    flex: 1
+  },
+  groupMutual: {
+    flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 10
+    paddingVertical: 8
+  },
+  alignRow: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  padding4: {
+    paddingHorizontal: 4
+  },
+
+  image: {
+    width: Dimensions.get('window').width,
+    maxWidth: '100%',
+    height: 180,
+    backgroundColor: Colors.Gray5,
+    resizeMode: 'cover',
+    borderRadius: 20
   }
 })
 

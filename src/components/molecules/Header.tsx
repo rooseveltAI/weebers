@@ -1,45 +1,38 @@
-import { IconGroup, IconSearch, IconBell } from 'assets/icons'
-import { BoldText, HeavyText } from '../StyledText'
-import Constants from 'expo-constants'
+import { useNavigation } from '@react-navigation/native'
 import React from 'react'
-import { Text, StyleSheet, Pressable, View, Platform } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import Colors from '../../constants/Colors'
 
 const Header = (props: any) => {
+  const navigation = useNavigation()
+
   return (
-    <View style={styles.header}>
-      <HeavyText style={{ fontSize: 24 }}>{props.title}</HeavyText>
-      <View style={styles.rightAside}>
-        <Pressable
-          style={({ pressed }) => ({
-            opacity: pressed ? 0.5 : 1
-          })}
-        >
-          {props.content}
-        </Pressable>
+    <View style={styles.headerContainer}>
+      <View style={{ position: 'absolute', left: 0, paddingLeft: 16 }}>
+        {props.leftComponent}
+      </View>
+      {/*  */}
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        {props.centerComponent}
+      </View>
+      {/*  */}
+      <View style={{ position: 'absolute', right: 12 }}>
+        {props.rightComponent}
       </View>
     </View>
   )
 }
+export default Header
 
 const styles = StyleSheet.create({
-  header: {
-    paddingTop:
-      Platform.OS === 'ios'
-        ? Constants.statusBarHeight + 10
-        : Constants.statusBarHeight - 10,
-    paddingBottom: Platform.OS === 'ios' ? 10 : 8,
-    paddingHorizontal: Platform.OS === 'ios' ? 10 : 8,
-    // height: 90,
+  headerContainer: {
+    width: '100%',
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    backgroundColor: '#000'
-  },
-
-  rightAside: {
-    flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'relative',
+    paddingVertical: 15,
+    paddingHorizontal: 24,
+    borderWidth: 0.5,
+    borderBottomColor: Colors.Gray10
   }
 })
-
-export default Header

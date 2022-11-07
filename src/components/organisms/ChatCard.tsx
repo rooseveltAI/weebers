@@ -1,5 +1,5 @@
 import {
-  UserIcon,
+  ProfileIcon,
   IconGroupSm,
   IconCommentSm,
   IconShare,
@@ -8,16 +8,21 @@ import {
   IconLocation,
   IconMore
 } from '../../assets/icons'
-import Divider from '../atoms/divider'
-import { MediumText, RegularText, SemiboldText, BoldText } from '../StyledText'
+import HDivider from '../atoms/HDividers'
+import {
+  MediumText,
+  RegularText,
+  SemiboldText,
+  BoldText
+} from '../atoms/StyledText'
 import React from 'react'
 import { Text, StyleSheet, Pressable, TextInput, View } from 'react-native'
-import Button from '../atoms/button'
+import Button from '../atoms/Button'
 
 const ChatCard = (props: any) => {
   return (
     <View style={styles.chatCard}>
-      <UserIcon style={{ width: 50, height: 50 }} />
+      <ProfileIcon style={{ width: 50, height: 50 }} />
       <View style={{ paddingHorizontal: 10, flex: 1 }}>
         <View style={{ alignItems: 'center', flexDirection: 'row' }}>
           <BoldText style={{ fontSize: 16 }}>Yoshua</BoldText>
