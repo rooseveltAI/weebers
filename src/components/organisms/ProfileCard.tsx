@@ -27,14 +27,14 @@ const ProfileCard = (props: any) => {
       <View>
         {/* Header Image */}
         <Image
-          source={require('../../assets/images/Image.png')}
+          source={props.headerImage}
           style={{ ...styles.image, ...props.style }}
         />
       </View>
 
       <View style={styles.groupColumn}>
         <View style={styles.headerRow}>
-          <AvatarXl onPress={onPress} />
+          <AvatarXl source={props.avatar} onPress={onPress} />
           <PrimaryBtn>
             <TextLg style={{ color: 'white', opacity: 0.87 }}>
               Add Friend

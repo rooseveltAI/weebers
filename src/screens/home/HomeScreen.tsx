@@ -37,6 +37,8 @@ export default function HomeScreen() {
         />
         <HorizontalScroll>
           <ProfileCard
+            headerImage={require('../../assets/images/head_yosh.png')}
+            avatar={require('../../assets/images/yosh.png')}
             username="Yoshua"
             pronounce="(He/They)"
             userhandle="@yoshua"
@@ -45,15 +47,20 @@ export default function HomeScreen() {
             location="NY, US"
           />
           <ProfileCard
+            headerImage={require('../../assets/images/heda.png')}
+            avatar={require('../../assets/images/rose.png')}
             username="Rosy"
             userhandle="@rosy"
+            age="22 yrs old"
             bio="Love good food | Music | Computers | Design | Nature | creator webelong"
             location="NY, US"
           />
           <ProfileCard
-            username="Luna Wedekind"
-            pronounce="(He/They)"
-            userhandle="@yoshua"
+            headerImage={require('../../assets/images/horota.jpeg')}
+            avatar={require('../../assets/images/horota.jpeg')}
+            username="Horota-san"
+            // pronounce="(He/They)"
+            userhandle="@horota"
             age="30 yrs old"
             location="NY, US"
           />
@@ -70,6 +77,8 @@ export default function HomeScreen() {
         />
         <HorizontalScroll>
           <CommunityCard
+            headerImage={require('../../assets/images/photohead.png')}
+            avatar={require('../../assets/images/photohead.png')}
             title="Photography"
             desc="Amazing Photos from around the world"
             membercount="2.7k"

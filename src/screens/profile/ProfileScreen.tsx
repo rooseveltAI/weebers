@@ -94,8 +94,8 @@ export default function ProfileScreen(props: any) {
 
               <View style={{ paddingVertical: 4 }}>
                 <TextSm style={{ color: Colors.Color10, fontSize: 15 }}>
-                  Webelong app design is part of my early legacy, and I still
-                  wish to nurture the brand future
+                  Love good food | Music | Computers | Design | Nature | creator
+                  webelong
                 </TextSm>
               </View>
 

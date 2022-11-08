@@ -21,14 +21,14 @@ const CommunityCard = (props: any) => {
       <View>
         {/* Header Image */}
         <Image
-          source={require('../../assets/images/Image.png')}
+          source={props.headerImage}
           style={{ ...styles.image, ...props.style }}
         />
       </View>
 
       <View style={styles.groupColumn}>
         <View style={styles.headerRow}>
-          <AvatarXl />
+          <AvatarXl source={props.avatar} />
           <SecondaryBtnOutline>
             <TextLg style={{ color: Colors.Color15, opacity: 0.87 }}>
               View
